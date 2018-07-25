@@ -102,3 +102,13 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# db file
+*.sql
+
+# Visual Studio
+*.vscode
+
+# Project Specific
+results/*
+*.sql

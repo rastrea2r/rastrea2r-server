@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"name": "Main",
+			"path": "."
+		},
+		{
+			"name": "Source",
+			"path": "src/rastrea2r_server"
+		},
+		{
+			"name": "Tests",
+			"path": "tests"
+		}
+	],
+	"settings": {
+		"python.pythonPath": "${workspaceFolder}/.venv/rastrea2r_server/bin/python"
+	}
+	
+}

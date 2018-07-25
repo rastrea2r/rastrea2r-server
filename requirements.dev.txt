@@ -1,0 +1,7 @@
+-r requirements.txt
+black
+coverage
+mypy
+sphinx
+twine
+wheel
