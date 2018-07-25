@@ -28,28 +28,28 @@ Quickstart
 ## Testing
 * You must activate the virtualenv before starting the server
 * Initialize DB and Add a user: 
-.. code-block:: console
+
     ./manage_server.py --init
 	./manage_server.py --add testuser 
 
 
 * Start the server: 
-.. code-block:: console
-    ./start_server.py
+
+	./start_server.py
 
 * Test the info request with a browser:
-.. code-block:: console
-    http://localhost:5000/
-    http://localhost:5000/rastrea2r/api/v1.0/info
-    http://localhost:5000/rastrea2r/api/v1.0/echo?message=test
-    http://localhost:5000/rastrea2r/api/v1.0/uptime
-    http://localhost:5000/test
+
+	http://localhost:5000/
+	http://localhost:5000/rastrea2r/api/v1.0/info
+        http://localhost:5000/rastrea2r/api/v1.0/echo?message=test
+        http://localhost:5000/rastrea2r/api/v1.0/uptime
+        http://localhost:5000/test
     
 * Or you could use curl
-.. code-block:: console
-    curl -d '{"key1":"value1", "key2":"value2"}' -H "Content-Type: application/json" -H "Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3ZA==" -X POST http://localhost:5000/rastrea2r/api/v1.0/results
 
-    curl -H "Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3ZA=="  http://localhost:5000/rastrea2r/api/v1.0/rule?rulename=example.yara
+	curl -d '{"key1":"value1", "key2":"value2"}' -H "Content-Type: application/json" -H "Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3ZA==" -X POST http://localhost:5000/rastrea2r/api/v1.0/results
+
+	curl -H "Authorization: Basic dGVzdHVzZXI6dGVzdHBhc3N3ZA=="  http://localhost:5000/rastrea2r/api/v1.0/rule?rulename=example.yara
 
     Note: Basic auth uses the base64 encoded string corresponding to username:password (in this case the username:password combo used was testuser:testpasswd)
 
