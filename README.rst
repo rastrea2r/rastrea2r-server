@@ -1,10 +1,18 @@
 .. image:: https://github.com/rastrea2r/rastrea2r-server/blob/master/logo.png
    :align: center
    :alt: logo
-   
+
+.. image:: https://travis-ci.org/rastrea2r/rastrea2r-server.svg?branch=master
+   :target: https://travis-ci.org/rastrea2r/rastrea2r-server.svg?branch=master
+   :alt: travis-ci for master branch
+
 .. image:: https://readthedocs.org/projects/rastrea2r-server/badge/?version=latest
-:target: https://rastrea2r-server.readthedocs.io/en/latest/?badge=latest
-:alt: Documentation Status
+   :target: https://rastrea2r-server.readthedocs.io/en/latest/?badge=latest
+   :alt: Documentation Status
+
+.. image:: http://www.repostatus.org/badges/1.1.0/active.svg
+   :alt: Project Status: Active - The project has reached a stable, usable state and is being actively developed.
+   :target: http://www.repostatus.org/#active
 
 
 rastrea2r-server
