@@ -56,7 +56,7 @@ def app_getinfo():
     # GET attributes
     for key in request.args:
         response["GET " + key] = request.args.get(key, "")
-    
+
     return jsonify(response)
 
 
@@ -74,13 +74,13 @@ def app_index():
 @app.route("/" + app_name + "/api/v1.0/rule", methods=["GET"])
 @auth.login_required
 def get_rule():
-    '''Fetches the Yara rule requested from Rules directory '''
-    rulename = request.args.get("rulename", "") 
+    """Fetches the Yara rule requested from Rules directory """
+    rulename = request.args.get("rulename", "")
     logger.debug("Pulling " + rulename)
     try:
-        rule_file = rules_location + '/' + rulename
+        rule_file = rules_location + "/" + rulename
         logger.debug("Rule file:" + rule_file)
-        f = open(rule_file, 'rb')
+        f = open(rule_file, "rb")
         rule = f.read()
         f.close()
         return rule
@@ -89,20 +89,26 @@ def get_rule():
 
 
 """ Method to post client data from file/dir scan to the REST server. Timestamps written in GMT """
+
+
 @app.route("/" + app_name + "/api/v1.0/results", methods=["POST"])
 @auth.login_required
 def post_results():
-    ''' Gets Results from client and stores them in JSON files '''
-    output_filename = results_location + "/" + "result-" + strftime('%Y-%m-%d-%H%M%S', gmtime()) + ".json"
+    """ Gets Results from client and stores them in JSON files """
+    output_filename = (
+        results_location
+        + "/"
+        + "result-"
+        + strftime("%Y-%m-%d-%H%M%S", gmtime())
+        + ".json"
+    )
     try:
-       with open(output_filename, 'w') as outfile:
+        with open(output_filename, "w") as outfile:
             json.dump(request.get_json(force=True), outfile)
-            response = {
-                "message": "Results Saved Successfully",
-                "status": "200",
-            }
+            response = {"message": "Results Saved Successfully", "status": "200"}
             return jsonify(response)
-    except IOError :
-        logger.error ("\nError: The output file requested doesn't exist\n")
-        return errors.internal_error("Error while creating result json file in the server")
-    
+    except IOError:
+        logger.error("\nError: The output file requested doesn't exist\n")
+        return errors.internal_error(
+            "Error while creating result json file in the server"
+        )

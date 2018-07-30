@@ -148,27 +148,3 @@ environment.
     ::
 
         https://github.com/{username}/rastrea2r_server/releases/{tag}
-
-- Create the release distribution. This project produces an artefact called a
-  pure Python wheel. The wheel file will be created in the ``dist`` directory.
-
-  .. code-block:: console
-
-      (venv) $ make dist
-
-- Test the release distribution. This involves creating a virtual environment,
-  installing the distribution into it and running project tests against the
-  installed distribution. These steps have been captured for convenience in a
-  Makefile rule.
-
-  .. code-block:: console
-
-      (venv) $ make dist-test
-
-- Upload the release to PyPI using
-
-  .. code-block:: console
-
-      (venv) $ make dist-upload
-
-  The package should now be available at https://pypi.org/project/rastrea2r_server/

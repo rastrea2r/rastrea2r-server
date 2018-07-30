@@ -34,6 +34,7 @@ def bad_request(error):
     resp.status_code = 400
     return resp
 
+
 @app.errorhandler(405)
 def method_not_allowed(error):
     print("Method Not Allowed")
@@ -41,6 +42,7 @@ def method_not_allowed(error):
     resp = jsonify(message)
     resp.status_code = 405
     return resp
+
 
 @app.errorhandler(500)
 def internal_error(error):

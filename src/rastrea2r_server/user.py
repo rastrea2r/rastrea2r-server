@@ -10,7 +10,7 @@ from rastrea2r_server import auth, db
 logger = logging.getLogger(__name__)
 
 
-class User(db.Model): # type: ignore
+class User(db.Model):  # type: ignore
     """ SQL User Model """
 
     id = db.Column(db.Integer, primary_key=True)

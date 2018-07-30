@@ -76,7 +76,7 @@ check-types:
 # help: docs                           - generate project documentation
 .PHONY: check-coverage
 docs: check-coverage
-	@cd docs; rm -rf source/api/rastrea2r_server*.rst source/api/modules.rst build/*
+	@cd docs; rm -rf build/*
 	@cd docs; make html
 	@# Copy coverage output into docs build tree
 	@cd docs; cp -R source/coverage build/html/.

@@ -1,8 +1,8 @@
-API
-###
+API Specifications
+##################
 
-This section provides you with information on specific functions, classes and methods.
+This section provides you with information on specific resources exposed by Rastrea2r Server.
 
 .. toctree::
 
-   modules.rst
+   api_spec_link

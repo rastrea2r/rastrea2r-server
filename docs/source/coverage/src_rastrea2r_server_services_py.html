@@ -36,6 +36,8 @@
             <span class="exc shortkey_x button_toggle_exc">0 excluded</span>
 
             
+                <span class="par run hide_run shortkey_p button_toggle_par">0 partial</span>
+            
         </h2>
     </div>
 </div>
@@ -158,23 +160,29 @@
 <p id="n89" class="pln"><a href="#n89">89</a></p>
 <p id="n90" class="pln"><a href="#n90">90</a></p>
 <p id="n91" class="pln"><a href="#n91">91</a></p>
-<p id="n92" class="stm run hide_run"><a href="#n92">92</a></p>
-<p id="n93" class="stm run hide_run"><a href="#n93">93</a></p>
-<p id="n94" class="pln"><a href="#n94">94</a></p>
-<p id="n95" class="pln"><a href="#n95">95</a></p>
-<p id="n96" class="stm run hide_run"><a href="#n96">96</a></p>
-<p id="n97" class="stm run hide_run"><a href="#n97">97</a></p>
+<p id="n92" class="pln"><a href="#n92">92</a></p>
+<p id="n93" class="pln"><a href="#n93">93</a></p>
+<p id="n94" class="stm run hide_run"><a href="#n94">94</a></p>
+<p id="n95" class="stm run hide_run"><a href="#n95">95</a></p>
+<p id="n96" class="pln"><a href="#n96">96</a></p>
+<p id="n97" class="pln"><a href="#n97">97</a></p>
 <p id="n98" class="stm run hide_run"><a href="#n98">98</a></p>
-<p id="n99" class="stm run hide_run"><a href="#n99">99</a></p>
-<p id="n100" class="stm run hide_run"><a href="#n100">100</a></p>
+<p id="n99" class="pln"><a href="#n99">99</a></p>
+<p id="n100" class="pln"><a href="#n100">100</a></p>
 <p id="n101" class="pln"><a href="#n101">101</a></p>
 <p id="n102" class="pln"><a href="#n102">102</a></p>
 <p id="n103" class="pln"><a href="#n103">103</a></p>
-<p id="n104" class="stm run hide_run"><a href="#n104">104</a></p>
+<p id="n104" class="pln"><a href="#n104">104</a></p>
 <p id="n105" class="stm run hide_run"><a href="#n105">105</a></p>
-<p id="n106" class="stm mis"><a href="#n106">106</a></p>
-<p id="n107" class="stm mis"><a href="#n107">107</a></p>
-<p id="n108" class="pln"><a href="#n108">108</a></p>
+<p id="n106" class="stm run hide_run"><a href="#n106">106</a></p>
+<p id="n107" class="stm run hide_run"><a href="#n107">107</a></p>
+<p id="n108" class="stm run hide_run"><a href="#n108">108</a></p>
+<p id="n109" class="stm run hide_run"><a href="#n109">109</a></p>
+<p id="n110" class="stm run hide_run"><a href="#n110">110</a></p>
+<p id="n111" class="stm mis"><a href="#n111">111</a></p>
+<p id="n112" class="stm mis"><a href="#n112">112</a></p>
+<p id="n113" class="pln"><a href="#n113">113</a></p>
+<p id="n114" class="pln"><a href="#n114">114</a></p>
 
             </td>
             <td class="text">
@@ -254,13 +262,13 @@
 <p id="t74" class="stm run hide_run"><span class="op">@</span><span class="nam">app</span><span class="op">.</span><span class="nam">route</span><span class="op">(</span><span class="str">"/"</span> <span class="op">+</span> <span class="nam">app_name</span> <span class="op">+</span> <span class="str">"/api/v1.0/rule"</span><span class="op">,</span> <span class="nam">methods</span><span class="op">=</span><span class="op">[</span><span class="str">"GET"</span><span class="op">]</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t75" class="stm run hide_run"><span class="op">@</span><span class="nam">auth</span><span class="op">.</span><span class="nam">login_required</span><span class="strut">&nbsp;</span></p>
 <p id="t76" class="pln"><span class="key">def</span> <span class="nam">get_rule</span><span class="op">(</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
-<p id="t77" class="pln">    <span class="str">'''Fetches the Yara rule requested from Rules directory '''</span><span class="strut">&nbsp;</span></p>
+<p id="t77" class="pln">    <span class="str">"""Fetches the Yara rule requested from Rules directory """</span><span class="strut">&nbsp;</span></p>
 <p id="t78" class="stm run hide_run">    <span class="nam">rulename</span> <span class="op">=</span> <span class="nam">request</span><span class="op">.</span><span class="nam">args</span><span class="op">.</span><span class="nam">get</span><span class="op">(</span><span class="str">"rulename"</span><span class="op">,</span> <span class="str">""</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t79" class="stm run hide_run">    <span class="nam">logger</span><span class="op">.</span><span class="nam">debug</span><span class="op">(</span><span class="str">"Pulling "</span> <span class="op">+</span> <span class="nam">rulename</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t80" class="stm run hide_run">    <span class="key">try</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
-<p id="t81" class="stm run hide_run">        <span class="nam">rule_file</span> <span class="op">=</span> <span class="nam">rules_location</span> <span class="op">+</span> <span class="str">'/'</span> <span class="op">+</span> <span class="nam">rulename</span><span class="strut">&nbsp;</span></p>
+<p id="t81" class="stm run hide_run">        <span class="nam">rule_file</span> <span class="op">=</span> <span class="nam">rules_location</span> <span class="op">+</span> <span class="str">"/"</span> <span class="op">+</span> <span class="nam">rulename</span><span class="strut">&nbsp;</span></p>
 <p id="t82" class="stm run hide_run">        <span class="nam">logger</span><span class="op">.</span><span class="nam">debug</span><span class="op">(</span><span class="str">"Rule file:"</span> <span class="op">+</span> <span class="nam">rule_file</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
-<p id="t83" class="stm run hide_run">        <span class="nam">f</span> <span class="op">=</span> <span class="nam">open</span><span class="op">(</span><span class="nam">rule_file</span><span class="op">,</span> <span class="str">'rb'</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t83" class="stm run hide_run">        <span class="nam">f</span> <span class="op">=</span> <span class="nam">open</span><span class="op">(</span><span class="nam">rule_file</span><span class="op">,</span> <span class="str">"rb"</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t84" class="stm run hide_run">        <span class="nam">rule</span> <span class="op">=</span> <span class="nam">f</span><span class="op">.</span><span class="nam">read</span><span class="op">(</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t85" class="stm run hide_run">        <span class="nam">f</span><span class="op">.</span><span class="nam">close</span><span class="op">(</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t86" class="stm run hide_run">        <span class="key">return</span> <span class="nam">rule</span><span class="strut">&nbsp;</span></p>
@@ -269,23 +277,29 @@
 <p id="t89" class="pln"><span class="strut">&nbsp;</span></p>
 <p id="t90" class="pln"><span class="strut">&nbsp;</span></p>
 <p id="t91" class="pln"><span class="str">""" Method to post client data from file/dir scan to the REST server. Timestamps written in GMT """</span><span class="strut">&nbsp;</span></p>
-<p id="t92" class="stm run hide_run"><span class="op">@</span><span class="nam">app</span><span class="op">.</span><span class="nam">route</span><span class="op">(</span><span class="str">"/"</span> <span class="op">+</span> <span class="nam">app_name</span> <span class="op">+</span> <span class="str">"/api/v1.0/results"</span><span class="op">,</span> <span class="nam">methods</span><span class="op">=</span><span class="op">[</span><span class="str">"POST"</span><span class="op">]</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
-<p id="t93" class="stm run hide_run"><span class="op">@</span><span class="nam">auth</span><span class="op">.</span><span class="nam">login_required</span><span class="strut">&nbsp;</span></p>
-<p id="t94" class="pln"><span class="key">def</span> <span class="nam">post_results</span><span class="op">(</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
-<p id="t95" class="pln">    <span class="str">''' Gets Results from client and stores them in JSON files '''</span><span class="strut">&nbsp;</span></p>
-<p id="t96" class="stm run hide_run">    <span class="nam">output_filename</span> <span class="op">=</span> <span class="nam">results_location</span> <span class="op">+</span> <span class="str">"/"</span> <span class="op">+</span> <span class="str">"result-"</span> <span class="op">+</span> <span class="nam">strftime</span><span class="op">(</span><span class="str">'%Y-%m-%d-%H%M%S'</span><span class="op">,</span> <span class="nam">gmtime</span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="str">".json"</span><span class="strut">&nbsp;</span></p>
-<p id="t97" class="stm run hide_run">    <span class="key">try</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
-<p id="t98" class="stm run hide_run">       <span class="key">with</span> <span class="nam">open</span><span class="op">(</span><span class="nam">output_filename</span><span class="op">,</span> <span class="str">'w'</span><span class="op">)</span> <span class="key">as</span> <span class="nam">outfile</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
-<p id="t99" class="stm run hide_run">            <span class="nam">json</span><span class="op">.</span><span class="nam">dump</span><span class="op">(</span><span class="nam">request</span><span class="op">.</span><span class="nam">get_json</span><span class="op">(</span><span class="nam">force</span><span class="op">=</span><span class="key">True</span><span class="op">)</span><span class="op">,</span> <span class="nam">outfile</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
-<p id="t100" class="stm run hide_run">            <span class="nam">response</span> <span class="op">=</span> <span class="op">{</span><span class="strut">&nbsp;</span></p>
-<p id="t101" class="pln">                <span class="str">"message"</span><span class="op">:</span> <span class="str">"Results Saved Successfully"</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
-<p id="t102" class="pln">                <span class="str">"status"</span><span class="op">:</span> <span class="str">"200"</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
-<p id="t103" class="pln">            <span class="op">}</span><span class="strut">&nbsp;</span></p>
-<p id="t104" class="stm run hide_run">            <span class="key">return</span> <span class="nam">jsonify</span><span class="op">(</span><span class="nam">response</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
-<p id="t105" class="stm run hide_run">    <span class="key">except</span> <span class="nam">IOError</span> <span class="op">:</span><span class="strut">&nbsp;</span></p>
-<p id="t106" class="stm mis">        <span class="nam">logger</span><span class="op">.</span><span class="nam">error</span> <span class="op">(</span><span class="str">"\nError: The output file requested doesn't exist\n"</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
-<p id="t107" class="stm mis">        <span class="key">return</span> <span class="nam">errors</span><span class="op">.</span><span class="nam">internal_error</span><span class="op">(</span><span class="str">"Error while creating result json file in the server"</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
-<p id="t108" class="pln"><span class="strut">&nbsp;</span></p>
+<p id="t92" class="pln"><span class="strut">&nbsp;</span></p>
+<p id="t93" class="pln"><span class="strut">&nbsp;</span></p>
+<p id="t94" class="stm run hide_run"><span class="op">@</span><span class="nam">app</span><span class="op">.</span><span class="nam">route</span><span class="op">(</span><span class="str">"/"</span> <span class="op">+</span> <span class="nam">app_name</span> <span class="op">+</span> <span class="str">"/api/v1.0/results"</span><span class="op">,</span> <span class="nam">methods</span><span class="op">=</span><span class="op">[</span><span class="str">"POST"</span><span class="op">]</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t95" class="stm run hide_run"><span class="op">@</span><span class="nam">auth</span><span class="op">.</span><span class="nam">login_required</span><span class="strut">&nbsp;</span></p>
+<p id="t96" class="pln"><span class="key">def</span> <span class="nam">post_results</span><span class="op">(</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
+<p id="t97" class="pln">    <span class="str">""" Gets Results from client and stores them in JSON files """</span><span class="strut">&nbsp;</span></p>
+<p id="t98" class="stm run hide_run">    <span class="nam">output_filename</span> <span class="op">=</span> <span class="op">(</span><span class="strut">&nbsp;</span></p>
+<p id="t99" class="pln">        <span class="nam">results_location</span><span class="strut">&nbsp;</span></p>
+<p id="t100" class="pln">        <span class="op">+</span> <span class="str">"/"</span><span class="strut">&nbsp;</span></p>
+<p id="t101" class="pln">        <span class="op">+</span> <span class="str">"result-"</span><span class="strut">&nbsp;</span></p>
+<p id="t102" class="pln">        <span class="op">+</span> <span class="nam">strftime</span><span class="op">(</span><span class="str">"%Y-%m-%d-%H%M%S"</span><span class="op">,</span> <span class="nam">gmtime</span><span class="op">(</span><span class="op">)</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t103" class="pln">        <span class="op">+</span> <span class="str">".json"</span><span class="strut">&nbsp;</span></p>
+<p id="t104" class="pln">    <span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t105" class="stm run hide_run">    <span class="key">try</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
+<p id="t106" class="stm run hide_run">        <span class="key">with</span> <span class="nam">open</span><span class="op">(</span><span class="nam">output_filename</span><span class="op">,</span> <span class="str">"w"</span><span class="op">)</span> <span class="key">as</span> <span class="nam">outfile</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
+<p id="t107" class="stm run hide_run">            <span class="nam">json</span><span class="op">.</span><span class="nam">dump</span><span class="op">(</span><span class="nam">request</span><span class="op">.</span><span class="nam">get_json</span><span class="op">(</span><span class="nam">force</span><span class="op">=</span><span class="key">True</span><span class="op">)</span><span class="op">,</span> <span class="nam">outfile</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t108" class="stm run hide_run">            <span class="nam">response</span> <span class="op">=</span> <span class="op">{</span><span class="str">"message"</span><span class="op">:</span> <span class="str">"Results Saved Successfully"</span><span class="op">,</span> <span class="str">"status"</span><span class="op">:</span> <span class="str">"200"</span><span class="op">}</span><span class="strut">&nbsp;</span></p>
+<p id="t109" class="stm run hide_run">            <span class="key">return</span> <span class="nam">jsonify</span><span class="op">(</span><span class="nam">response</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t110" class="stm run hide_run">    <span class="key">except</span> <span class="nam">IOError</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
+<p id="t111" class="stm mis">        <span class="nam">logger</span><span class="op">.</span><span class="nam">error</span><span class="op">(</span><span class="str">"\nError: The output file requested doesn't exist\n"</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t112" class="stm mis">        <span class="key">return</span> <span class="nam">errors</span><span class="op">.</span><span class="nam">internal_error</span><span class="op">(</span><span class="strut">&nbsp;</span></p>
+<p id="t113" class="pln">            <span class="str">"Error while creating result json file in the server"</span><span class="strut">&nbsp;</span></p>
+<p id="t114" class="pln">        <span class="op">)</span><span class="strut">&nbsp;</span></p>
 
             </td>
         </tr>
@@ -296,7 +310,7 @@
     <div class="content">
         <p>
             <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.io">coverage.py v4.5.1</a>,
-            created at 2018-07-25 01:52
+            created at 2018-07-29 09:21
         </p>
     </div>
 </div>

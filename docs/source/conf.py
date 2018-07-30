@@ -43,15 +43,15 @@ templates_path = ['_templates']
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
 #
-# source_suffix = ['.rst', '.md']
-source_suffix = '.rst'
+source_suffix = ['.rst', '.md']
+#source_suffix = '.rst'
 
 # The master toctree document.
 master_doc = 'index'
 
 # General information about the project.
 project = 'rastrea2-server'
-copyright = '2018, Sudheendra Bhat'
+copyright = '2018, rastrea2r'
 author = 'Sudheendra Bhat'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -83,11 +83,11 @@ todo_include_todos = False
 
 # If true, links to the reST sources are added to the pages.
 #
-html_show_sourcelink = False
+html_show_sourcelink = True
 
 # If true, "(C) Copyright ..." is shown in the HTML footer. Default is True.
 #
-html_show_copyright = False
+html_show_copyright = True
 
 # Suppress nonlocal image warnings
 suppress_warnings = ['image.nonlocal_uri']
@@ -107,7 +107,7 @@ html_theme = 'alabaster'
 html_theme_options = {
     'description': 'Flask based Restful Server to handle requests from rastrea2r',
     'show_powered_by': False,
-    # 'logo': 'my-logo.png',
+    'logo': 'logo.png',
     'logo_name': False,
     'page_width': '80%',
 }
