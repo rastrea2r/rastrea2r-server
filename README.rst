@@ -1,3 +1,12 @@
+.. image:: https://github.com/rastrea2r/rastrea2r-server/blob/master/logo.png
+   :align: center
+   :alt: logo
+   
+.. image:: https://readthedocs.org/projects/rastrea2r-server/badge/?version=latest
+:target: https://rastrea2r-server.readthedocs.io/en/latest/?badge=latest
+:alt: Documentation Status
+
+
 rastrea2r-server
 ================
 

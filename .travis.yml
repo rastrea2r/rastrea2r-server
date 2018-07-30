@@ -13,6 +13,3 @@ install:
   
 script:
   - make test
-  - make check-coverage
-  - make docs
-
