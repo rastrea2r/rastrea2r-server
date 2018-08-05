@@ -95,16 +95,28 @@ def get_rule():
 @auth.login_required
 def post_results():
     """ Gets Results from client and stores them in JSON files """
+    module_name = request.headers['module']
+    if module_name is None:
+        module_name = 'results'
+
+    ip_addr = request.remote_addr
+    if ip_addr is None:
+        ip_addr = 'NoIp'
+    else:
+        ip_addr = ip_addr.replace('.','_')
+
     output_filename = (
         results_location
         + "/"
-        + "result-"
+        + ip_addr +"-"
+        + module_name +"-"
         + strftime("%Y-%m-%d-%H%M%S", gmtime())
         + ".json"
     )
     try:
         with open(output_filename, "w") as outfile:
-            json.dump(request.get_json(force=True), outfile)
+            outfile.write(request.get_json(force=True))
+            #json.dump(request.get_json(force=True), outfile)
             response = {"message": "Results Saved Successfully", "status": "200"}
             return jsonify(response)
     except IOError:

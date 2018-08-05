@@ -112,3 +112,9 @@ venv.bak/
 # Project Specific
 results/*
 *.sql
+
+# Mac hidden files
+.DS_Store
+
+# Test Db
+testdb

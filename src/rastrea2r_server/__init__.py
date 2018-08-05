@@ -14,7 +14,7 @@ from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 from flask_sqlalchemy import SQLAlchemy
 
-__version__ = "0.0.1"
+__version__ = "0.1.0"
 
 logger = logging.getLogger(__name__)
 
@@ -22,7 +22,7 @@ logger = logging.getLogger(__name__)
 debug = 0
 
 # Flask Limits for Safety
-flask_limits = ["1000 per day", "100 per hour", "5 per minute"]
+flask_limits = ["10000 per day", "1000 per hour", "500 per minute"]
 
 
 def override_config(cfg):
