@@ -6,5 +6,3 @@ flask_limiter
 passlib
 sqlalchemy
 flask_sqlalchemy
-uwsgi
-redis

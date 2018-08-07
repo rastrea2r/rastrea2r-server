@@ -1,3 +1,4 @@
+import os
 import logging
 import subprocess
 from flask import jsonify, request
@@ -105,6 +106,10 @@ def post_results():
     else:
         ip_addr = ip_addr.replace('.','_')
 
+    #Check if the results folder is present, if not create one
+    if not os.path.exists(results_location):
+        os.makedirs(results_location)
+
     output_filename = (
         results_location
         + "/"
@@ -113,6 +118,9 @@ def post_results():
         + strftime("%Y-%m-%d-%H%M%S", gmtime())
         + ".json"
     )
+
+    logger.debug("Storing results at: " + output_filename)
+
     try:
         with open(output_filename, "w") as outfile:
             outfile.write(request.get_json(force=True))

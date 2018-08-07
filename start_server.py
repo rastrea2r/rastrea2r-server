@@ -32,5 +32,6 @@ if config['rastrea2r']['https'] != '0':
 
 # Localhost-only HTTP development server
 else:
+	# TODO: Host should be updated to debug:debug (this is temporary until HTTPS is in place)
     logger.warning("HTTPS is not configured, defaulting to localhost only")
-    app.run(debug=debug, port=int(config['rastrea2r']['port']))
+    app.run(host='0.0.0.0', port=int(config['rastrea2r']['port']))
